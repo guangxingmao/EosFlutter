@@ -25,4 +25,6 @@ class MgxStringZh extends MgxStringBase {
   @override
   String invalid_privatekey = "私钥错误";
 
+  @override
+  String account_not_find = "未查询到 EOS 账户";
 }

@@ -1,4 +1,11 @@
+import 'dart:convert';
+
+import 'package:dio/dio.dart';
 import 'package:eos_flutter/common/ecc/key.dart';
+import 'package:eos_flutter/common/model/history/get_key_account.dart';
+import 'package:eos_flutter/common/net/api.dart';
+import 'package:eos_flutter/common/net/api_point.dart';
+import 'package:eos_flutter/common/net/result_data.dart';
 import 'package:eos_flutter/common/utils/common_utils.dart';
 import 'package:eos_flutter/common/utils/navigator_utils.dart';
 import 'package:eos_flutter/widget/mgx_btn_widget.dart';
@@ -18,8 +25,6 @@ class _ImportWalletByPrivateKeyPageState
   TextEditingController _privateKeyController = TextEditingController();
   bool _enable = false;
   String _input;
-
-
 
   @override
   void initState() {
@@ -64,13 +69,42 @@ class _ImportWalletByPrivateKeyPageState
     );
   }
 
-  void _findAccountByPublicKey() {
-    try{
-      EOSPrivateKey privateKey = EOSPrivateKey.fromString(_input);
-      EOSPublicKey publicKey = privateKey.toEOSPublicKey();
+  void _findAccountByPublicKey() async {
+    String publickey;
+    try {
+      EOSPrivateKey eosPrivateKey = EOSPrivateKey.fromString(_input);
+      EOSPublicKey eosPublicKey = eosPrivateKey.toEOSPublicKey();
+      publickey = eosPublicKey.toString();
+//      var res = await httpManager.netFetch(
+//          "https://eosmainnet.medishares.net/v1/history/get_key_accounts",{"public_key":"${publicKey.toString()}"});
+//      print("dfdfd${res.data}");
 
-    }catch(e) {
-      CommonUtils.showErrorToast(CommonUtils.getLocale(context).invalid_privatekey);
+//      var res = await httpManager.netFetch(
+//          "https://eosmainnet.medishares.net/v1/chain/get_account",
+//          params: {"account_name": "g43tsnbygqge1"},
+//          options: Options(method: "POST"));
+    } catch (e) {
+      CommonUtils.showErrorToast(
+          CommonUtils.getLocale(context).invalid_privatekey);
+//      return;
+    }
+    publickey = "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3";
+    var resultData = await httpManager.netFetch(Point.getKeyAccounts(),
+        params: {
+          "public_key": "EOS7jbyMfRRcdwsdTHYRYbMBkkgYWTxZA61HZSHGuiSdJdiJr9H9d"
+        },
+        options: Options(method: "POST"));
+    if (resultData != null && resultData.result) {
+      GetKeyAccount getKeyAccount = GetKeyAccount.fromJson(resultData.data);
+      if (getKeyAccount.accountNames.isEmpty) {
+        CommonUtils.showErrorToast(
+            CommonUtils.getLocale(context).account_not_find);
+      } else {
+        //TODO 选择账户导入页面
+        print("选择账户导入页面");
+      }
+    } else {
+      CommonUtils.showErrorToast(resultData.data);
     }
   }
 }

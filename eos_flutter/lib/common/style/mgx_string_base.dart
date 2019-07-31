@@ -17,4 +17,5 @@ class MgxStringBase {
 
   String invalid_privatekey;
 
+  String account_not_find;
 }
