@@ -34,7 +34,10 @@ dependencies:
   shared_preferences: ^0.5.3+2 #SharedPreferences
   flutter_svg: ^0.13.1 #svg
   fluttertoast: ^3.1.0  #toast
-
+  flutter_lottie:     #lottie
+    git:
+      url: https://github.com/CarSmallGuo/flutter_lottie.git
+      ref: 3adb18f2e2a45b8dbdebc0437e9a4db3f6ff32b8
 dev_dependencies:
   build_runner: ^1.2.8
   json_serializable: ^3.0.0
