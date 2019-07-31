@@ -28,3 +28,5 @@ Flutter练手项目，仿麦子钱包UI的Eos钱包，
   * 10.shared_preferences: ^0.5.3+2 #SharedPreferences
   * 11.flutter_svg: ^0.13.1 #svg
   * 12.fluttertoast: ^3.1.0  #toast
+# 致谢
+ 
