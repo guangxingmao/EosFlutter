@@ -36,3 +36,4 @@ Flutter练手项目，仿麦子钱包UI的Eos钱包，
 # 致谢
   * 1.[Math Wallet](https://www.maiziqianbao.net)
   * 2.[primes-network](https://github.com/primes-network) 
+  * 3.[GSYGithubAppFlutter](https://github.com/CarGuo/GSYGithubAppFlutter)
