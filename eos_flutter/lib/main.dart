@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:eos_flutter/page/main_page.dart';
 import 'package:eos_flutter/page/splash_page.dart';
 import 'package:eos_flutter/page/wallet_page.dart';
+import 'package:eos_flutter/widget/mgx_input_widget.dart';
 import 'package:eos_flutter/widget/mgx_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -53,7 +54,7 @@ class FlutterEosApp extends StatelessWidget {
               WalletPage.sName: (_) => WalletPage(),
               MainPage.sName: (_) => MainPage()
             },
-            home: new SplashPage(),
+            home: SplashPage(),
           );
         }));
   }

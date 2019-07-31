@@ -2,6 +2,7 @@ import 'package:eos_flutter/common/style/mgx_style.dart';
 import 'package:flutter/material.dart';
 
 class MgxMaterialWidget extends StatelessWidget {
+  BuildContext buildContext;
   String title;
   Widget body;
   Color backgroundColor;
@@ -9,6 +10,7 @@ class MgxMaterialWidget extends StatelessWidget {
   VoidCallback leftPress;
 
   MgxMaterialWidget(
+    this.buildContext,
     this.title, {
     this.backgroundColor = const Color(MgxColor.background_colors_default),
     this.body,
@@ -33,7 +35,7 @@ class MgxMaterialWidget extends StatelessWidget {
                     onPressed: leftPress != null
                         ? leftPress
                         : () {
-                            Navigator.of(context).pop();
+                            Navigator.pop(buildContext);
                           })
                 : Container();
           }),
