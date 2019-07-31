@@ -7,6 +7,10 @@ Flutter练手项目，仿麦子钱包UI的Eos钱包，
       * 多语言
       * 主题
   * 2.Dio 网络请求
+      * ErrorInterceptors
+      * HeadInterceptors
+      * LogsInterceptors
+      * ResponseInterceptor
   * 3.shared_preferences，sqflite 数据存储
   * 4.event_bus 事件总线
   * 5.widgets 部件
@@ -32,3 +36,4 @@ Flutter练手项目，仿麦子钱包UI的Eos钱包，
 # 致谢
   * 1.[Math Wallet](https://www.maiziqianbao.net)
   * 2.[primes-network](https://github.com/primes-network) 
+  * 3.[GSYGithubAppFlutter](https://github.com/CarGuo/GSYGithubAppFlutter)
