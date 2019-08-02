@@ -5,6 +5,7 @@ import 'package:eos_flutter/common/utils/navigator_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_svg/svg.dart';
+//import 'package:flutter_svg/svg.dart';
 import 'package:redux/redux.dart';
 
 class SplashPage extends StatefulWidget {

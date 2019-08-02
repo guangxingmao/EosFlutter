@@ -6,6 +6,7 @@ import 'package:eos_flutter/page/wallet_page.dart';
 import 'package:eos_flutter/widget/mgx_input_widget.dart';
 import 'package:eos_flutter/widget/mgx_item_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_lottie/flutter_lottie.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
@@ -42,20 +43,19 @@ class FlutterEosApp extends StatelessWidget {
         store: store,
         child: new StoreBuilder<MgxState>(builder: (context, store) {
           return MaterialApp(
-            localizationsDelegates: [
-              MgxLocalizationsDelegate.delegate,
-            ],
-            locale: store.state.locale,
-            supportedLocales: [store.state.locale],
-            theme: store.state.themeData,
-            routes: {
-              //通过Name跳转，需要先注册路由，关联Name和界面
-              SplashPage.sName: (_) => SplashPage(),
-              WalletPage.sName: (_) => WalletPage(),
-              MainPage.sName: (_) => MainPage()
-            },
-            home: SplashPage(),
-          );
+              localizationsDelegates: [
+                MgxLocalizationsDelegate.delegate,
+              ],
+              locale: store.state.locale,
+              supportedLocales: [store.state.locale],
+              theme: store.state.themeData,
+              routes: {
+                //通过Name跳转，需要先注册路由，关联Name和界面
+                SplashPage.sName: (_) => SplashPage(),
+                WalletPage.sName: (_) => WalletPage(),
+                MainPage.sName: (_) => MainPage()
+              },
+              home: SplashPage());
         }));
   }
 }
