@@ -6,6 +6,7 @@ import 'package:eos_flutter/widget/mgx_material_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'Import_account_page.dart';
 import 'Import_wallet_by_privatekey_page.dart';
 
 class ImportWalletWaysPage extends StatelessWidget {

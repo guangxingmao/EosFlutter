@@ -2,14 +2,14 @@ import 'package:eos_flutter/common/style/mgx_style.dart';
 import 'package:flutter/material.dart';
 
 class MgxInputWidget extends StatelessWidget {
-  BuildContext context;
   String inputTitle;
   String hintText;
   int maxLine;
   TextEditingController controller;
+  bool isPsd;
 
-  MgxInputWidget(this.context,this.inputTitle, this.hintText,
-      {this.maxLine = 1, this.controller});
+  MgxInputWidget(this.inputTitle, this.hintText,
+      {this.maxLine = 1, this.controller,this.isPsd = false});
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +52,7 @@ class MgxInputWidget extends StatelessWidget {
                   border: InputBorder.none,
                 ),
                 cursorColor: Color(MgxColor.primary_colors_blue),
+                obscureText: isPsd,  //是否是密码
                 style: TextStyle(
                   color: Color(MgxColor.black),
                   fontSize: 16,

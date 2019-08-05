@@ -43,19 +43,19 @@ class FlutterEosApp extends StatelessWidget {
         store: store,
         child: new StoreBuilder<MgxState>(builder: (context, store) {
           return MaterialApp(
-              localizationsDelegates: [
-                MgxLocalizationsDelegate.delegate,
-              ],
-              locale: store.state.locale,
-              supportedLocales: [store.state.locale],
-              theme: store.state.themeData,
-              routes: {
-                //通过Name跳转，需要先注册路由，关联Name和界面
-                SplashPage.sName: (_) => SplashPage(),
-                WalletPage.sName: (_) => WalletPage(),
-                MainPage.sName: (_) => MainPage()
-              },
-              home: SplashPage());
+            localizationsDelegates: [
+              MgxLocalizationsDelegate.delegate,
+            ],
+            locale: store.state.locale,
+            supportedLocales: [store.state.locale],
+            theme: store.state.themeData,
+            routes: {
+              //通过Name跳转，需要先注册路由，关联Name和界面
+              SplashPage.sName: (_) => SplashPage(),
+              WalletPage.sName: (_) => WalletPage(),
+              MainPage.sName: (_) => MainPage()
+            },
+          );
         }));
   }
 }

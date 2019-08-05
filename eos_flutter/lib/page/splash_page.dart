@@ -9,7 +9,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:redux/redux.dart';
 
 class SplashPage extends StatefulWidget {
-  static final String sName = "/splash";
+  static final String sName = "/";
 
   @override
   _SplashPageState createState() => _SplashPageState();

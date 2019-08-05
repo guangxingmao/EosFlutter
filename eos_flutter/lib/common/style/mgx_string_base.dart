@@ -18,4 +18,12 @@ class MgxStringBase {
   String invalid_privatekey;
 
   String account_not_find;
+
+  String password_title;
+
+  String password_placeHolder;
+
+  String password_repeat_title;
+
+  String password_repeat_placeHolder;
 }

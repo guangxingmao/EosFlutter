@@ -27,4 +27,16 @@ class MgxStringZh extends MgxStringBase {
 
   @override
   String account_not_find = "未查询到 EOS 账户";
+
+  @override
+  String password_title = "密码";
+
+  @override
+  String password_placeHolder = "至少 8 位 字符，包含大小写字母和数字";
+
+  @override
+  String password_repeat_title = "重复密码";
+
+  @override
+  String password_repeat_placeHolder = "再次输入密码";
 }
