@@ -9,6 +9,7 @@ import 'import_wallet_ways_page.dart';
 
 class WalletPage extends StatelessWidget {
   static final sName = '/wallet';
+
   @override
   Widget build(BuildContext context) {
     return MgxMaterialWidget(
